@@ -16,7 +16,7 @@ import {
 import { Foundation } from "@expo/vector-icons";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
-import { ColorSchemeName, Pressable } from "react-native";
+import { ColorSchemeName, Dimensions, Pressable } from "react-native";
 
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
@@ -30,6 +30,7 @@ import {
   RootTabScreenProps,
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
+import { fontFamily, theme } from "../shared/constants";
 
 export default function Navigation({
   colorScheme,
@@ -85,7 +86,18 @@ function BottomTabNavigator() {
     <BottomTab.Navigator
       initialRouteName="Home"
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
+        tabBarActiveTintColor: "#ffffff",
+        tabBarStyle: {
+          backgroundColor: theme.background,
+          borderTopWidth: 2,
+          borderTopColor: theme.background,
+          paddingVertical: 15,
+          height: Dimensions.get("screen").height * 0.1,
+        },
+        tabBarLabelStyle: {
+          fontFamily: fontFamily.Book,
+          letterSpacing: 0.3,
+        },
       }}
     >
       <BottomTab.Screen
@@ -96,21 +108,7 @@ function BottomTabNavigator() {
           tabBarIcon: ({ color }) => (
             <Foundation name="home" size={24} color={color} />
           ),
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate("Modal")}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}
-            >
-              <FontAwesome
-                name="info-circle"
-                size={25}
-                color={Colors[colorScheme].text}
-                style={{ marginRight: 15 }}
-              />
-            </Pressable>
-          ),
+          header: () => null,
         })}
       />
       <BottomTab.Screen

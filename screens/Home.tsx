@@ -1,9 +1,8 @@
 import * as React from "react";
 import { StyleSheet } from "react-native";
 
-import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
-import { fontFamily } from "../shared/constants";
+import { fontFamily, theme } from "../shared/constants";
 import { RootTabScreenProps } from "../types";
 
 export const Home = ({ navigation }: RootTabScreenProps<"Home">) => {
@@ -15,7 +14,6 @@ export const Home = ({ navigation }: RootTabScreenProps<"Home">) => {
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
     </View>
   );
 };
@@ -25,11 +23,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: theme.background,
   },
   title: {
     fontFamily: fontFamily.Book,
     fontSize: 20,
     fontWeight: "bold",
+    color: "#ffffff",
   },
   separator: {
     marginVertical: 30,

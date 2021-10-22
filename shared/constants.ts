@@ -5,3 +5,7 @@ export enum fontFamily {
     Book = 'CircularStd-Book',
     Light = 'CircularStd-Light',
 }
+
+export const theme = {
+    background: '#121212'
+}
