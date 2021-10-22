@@ -6,9 +6,7 @@ import { Text, View } from "../components/Themed";
 import { fontFamily } from "../shared/constants";
 import { RootTabScreenProps } from "../types";
 
-export default function TabOneScreen({
-  navigation,
-}: RootTabScreenProps<"TabOne">) {
+export const Home = ({ navigation }: RootTabScreenProps<"Home">) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab One</Text>
@@ -20,7 +18,7 @@ export default function TabOneScreen({
       <EditScreenInfo path="/screens/TabOneScreen.tsx" />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
