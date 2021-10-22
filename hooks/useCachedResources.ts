@@ -15,7 +15,11 @@ export default function useCachedResources() {
         // Load fonts
         await Font.loadAsync({
           ...FontAwesome.font,
-          'space-mono': require('../assets/fonts/SpaceMono-Regular.ttf'),
+          'CircularStd-Black': require('../assets/fonts/CircularStd-Black.otf'),
+          'CircularStd-Bold': require('../assets/fonts/CircularStd-Bold.otf'),
+          'CircularStd-Medium': require('../assets/fonts/CircularStd-Medium.otf'),
+          'CircularStd-Book': require('../assets/fonts/CircularStd-Book.otf'),
+          'CircularStd-Light': require('../assets/fonts/CircularStd-Light.otf'),
         });
       } catch (e) {
         // We might want to provide this error information to an error reporting service
