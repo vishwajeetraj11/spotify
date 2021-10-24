@@ -7,5 +7,42 @@ export enum fontFamily {
 }
 
 export const theme = {
-    background: '#121212'
+    darkestGray: '#121212',
+    brand: '#57B65F',
+    gray: '#B3B3B3',
+    white: "#ffffff",
+    darkGray: "#282828",
+}
+
+export const iconNames = {
+    ADD_TO_PLAYLIST: 'add-to-playlist',
+    ALBUM: 'album',
+    ARTISTS: 'artists',
+    QUEUE: 'queue',
+    SHARE: 'share',
+    SHOW_CREDITS: 'show-credits',
+    SLEEP: 'sleep',
+    HISTORY: 'history',
+    LIKE_FILL: 'like-fill',
+    LIKE_OUTLINE: 'like-outline',
+    LIBRARY1: 'library1',
+    PLAY_FILL: 'play-fill',
+    PLAY_OUTLINE: 'play-outline',
+    SEARCH_FILL: 'search-fill',
+    SEARCH_OUTLINE: 'search-outline',
+    MENU_DOTS: 'menu-dots',
+    PLUS: 'plus',
+    ARROW_NARROW_DOWN: 'arrow-narrow-down',
+    DEVICES: 'devices',
+    LIST_PLAYING: 'list-playing',
+    PLAYER_BACK: 'player-back',
+    PLAYER_PAUSE: 'player-pause',
+    PLAYER_SHUFFLE_ACTIVE: 'player-shuffle-active',
+    PLAYER_SHUFFLE: 'player-shuffle',
+    PLAYER_SKIP: 'player-skip',
+    REPEAT_ACTIVE: 'repeat-active',
+    REPEAT: 'repeat',
+    LIBRARY: 'library',
+    SETTINGS: 'settings',
+    SPOTIFY: 'spotify'
 }

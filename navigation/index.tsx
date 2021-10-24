@@ -16,7 +16,7 @@ import {
 import { Foundation } from "@expo/vector-icons";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
-import { ColorSchemeName, Dimensions, Pressable } from "react-native";
+import { ColorSchemeName, Dimensions } from "react-native";
 
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
@@ -88,11 +88,11 @@ function BottomTabNavigator() {
       screenOptions={{
         tabBarActiveTintColor: "#ffffff",
         tabBarStyle: {
-          backgroundColor: theme.background,
+          backgroundColor: theme.darkestGray,
           borderTopWidth: 2,
-          borderTopColor: theme.background,
+          borderTopColor: theme.darkestGray,
           paddingVertical: 15,
-          height: Dimensions.get("screen").height * 0.1,
+          height: Dimensions.get("screen").height * 0.115,
         },
         tabBarLabelStyle: {
           fontFamily: fontFamily.Book,
