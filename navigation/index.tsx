@@ -31,6 +31,7 @@ import {
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
 import { fontFamily, theme } from "../shared/constants";
+import { Search } from "../screens/Search";
 
 export default function Navigation({
   colorScheme,
@@ -113,8 +114,9 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="Search"
-        component={TabTwoScreen}
+        component={Search}
         options={{
+          header: () => null,
           title: "Search",
           tabBarIcon: ({ color }) => (
             <Feather name="search" size={24} color={color} />

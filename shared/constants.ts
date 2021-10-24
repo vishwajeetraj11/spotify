@@ -28,8 +28,8 @@ export const iconNames = {
     LIBRARY1: 'library1',
     PLAY_FILL: 'play-fill',
     PLAY_OUTLINE: 'play-outline',
-    SEARCH_FILL: 'search-fill',
-    SEARCH_OUTLINE: 'search-outline',
+    SEARCH_FILL: 'search-fill', // X
+    SEARCH_OUTLINE: 'search-outline',  // X
     MENU_DOTS: 'menu-dots',
     PLUS: 'plus',
     ARROW_NARROW_DOWN: 'arrow-narrow-down',
@@ -43,6 +43,6 @@ export const iconNames = {
     REPEAT_ACTIVE: 'repeat-active',
     REPEAT: 'repeat',
     LIBRARY: 'library',
-    SETTINGS: 'settings',
+    SETTINGS: 'settings', // X
     SPOTIFY: 'spotify'
 }
