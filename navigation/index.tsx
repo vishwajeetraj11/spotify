@@ -32,6 +32,7 @@ import {
 import LinkingConfiguration from "./LinkingConfiguration";
 import { fontFamily, theme } from "../shared/constants";
 import { Search } from "../screens/Search";
+import Library from "../screens/Library";
 
 export default function Navigation({
   colorScheme,
@@ -125,9 +126,10 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="YourLibrary"
-        component={TabTwoScreen}
+        component={Library}
         options={{
           title: "Your Library",
+          header: () => null,
           tabBarIcon: ({ color }) => (
             <MaterialIcons name="my-library-music" size={24} color={color} />
           ),

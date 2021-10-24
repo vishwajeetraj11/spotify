@@ -31,7 +31,7 @@ export const iconNames = {
     SEARCH_FILL: 'search-fill', // X
     SEARCH_OUTLINE: 'search-outline',  // X
     MENU_DOTS: 'menu-dots',
-    PLUS: 'plus',
+    PLUS: 'plus', // X
     ARROW_NARROW_DOWN: 'arrow-narrow-down',
     DEVICES: 'devices',
     LIST_PLAYING: 'list-playing',

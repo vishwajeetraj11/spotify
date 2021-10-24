@@ -4,12 +4,12 @@ import Svg, { Path } from "react-native-svg";
 interface ISvgIcon {
   height?: number;
   width?: number;
-  fill?: number;
+  fill?: string;
   props?: {};
   strokeColor?: string;
 }
 
-const Settings: React.FC<ISvgIcon> = ({
+export const Settings: React.FC<ISvgIcon> = ({
   height,
   width,
   fill,
@@ -64,4 +64,52 @@ export const Search: React.FC<ISvgIcon> = ({
   );
 };
 
-export default Settings;
+export const Plus: React.FC<ISvgIcon> = ({
+  height,
+  width,
+  fill,
+  strokeColor,
+  ...props
+}) => {
+  return (
+    <Svg
+      viewBox="0 0 24 24"
+      width={width || 30}
+      height={height || 30}
+      fill="none"
+      {...props}
+    >
+      <Path
+        d="M12 5v14M5 12h14"
+        stroke={strokeColor || "#4B4B4B"}
+        strokeWidth={1}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Svg>
+  );
+};
+
+// Down Up Arrow
+export const Recent: React.FC<ISvgIcon> = ({
+  height,
+  width,
+  fill,
+  strokeColor,
+  ...props
+}) => {
+  return (
+    <Svg
+      viewBox="0 0 24 24"
+      width={width || 24}
+      height={height || 24}
+      fill="none"
+      {...props}
+    >
+      <Path
+        d="M4.293.293a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L6 3.414V15a1 1 0 11-2 0V3.414L1.707 5.707A1 1 0 01.293 4.293l4-4zM14 12.586V1a1 1 0 112 0v11.586l2.293-2.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L14 12.586z"
+        fill={fill || "#0D0D0D"}
+      />
+    </Svg>
+  );
+};

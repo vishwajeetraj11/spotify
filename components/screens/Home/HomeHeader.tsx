@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { fontFamily, iconNames, theme } from "../../../shared/constants";
 import { Icon } from "../../Icon";
-import Settings from "../../Svgs";
+import { Settings } from "../../Svgs";
 
 export const HomeHeader = () => {
   return (
