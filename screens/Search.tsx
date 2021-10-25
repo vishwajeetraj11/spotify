@@ -9,6 +9,7 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import SearchCard from "../components/screens/Search/SearchCard";
 import SearchHeader from "../components/screens/Search/SearchHeader";
 import { width } from "../constants/Layout";
 import { fontFamily, theme } from "../shared/constants";
@@ -19,8 +20,10 @@ export const Search = () => {
       <StatusBar barStyle="light-content" />
       <SearchHeader />
       <ScrollView
+        style={{ flex: 1 }}
         contentContainerStyle={{
           padding: 16,
+          flex: 1,
         }}
       >
         <Text
@@ -41,48 +44,7 @@ export const Search = () => {
           }}
         >
           {React.Children.toArray(
-            browseAll.map((search) => (
-              <TouchableOpacity
-                style={{
-                  borderRadius: 8,
-                  backgroundColor: search.color,
-                  height: 100,
-                  width: width / 2 - 24,
-                  marginBottom: 16,
-                  overflow: "hidden",
-                  position: "relative",
-                  paddingTop: 12,
-                  paddingLeft: 8,
-                }}
-              >
-                <Text
-                  style={{
-                    fontFamily: fontFamily.Bold,
-                    width: 100,
-                    color: "#ffffff",
-                    fontSize: 15,
-                  }}
-                >
-                  {search.title}
-                </Text>
-                <Image
-                  style={{
-                    height: 80,
-                    width: 80,
-                    position: "absolute",
-                    resizeMode: "cover",
-                    bottom: 0,
-                    right: -20,
-                    transform: [
-                      {
-                        rotate: "25deg",
-                      },
-                    ],
-                  }}
-                  source={{ uri: search.imageUrl }}
-                />
-              </TouchableOpacity>
-            ))
+            browseAll.map((search) => <SearchCard search={search} />)
           )}
         </View>
       </ScrollView>

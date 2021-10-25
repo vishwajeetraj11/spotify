@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -8,10 +8,17 @@ import {
   Image,
   TouchableOpacity,
   View,
+  FlatList,
 } from "react-native";
+import { IconFont } from "../components/IconFont";
+import LibraryHorizontalCard from "../components/screens/Library/LibraryHorizontalCard";
 import { Plus, Recent, Search } from "../components/Svgs";
-import { width } from "../constants/Layout";
-import { fontFamily, iconNames, theme } from "../shared/constants";
+import {
+  fontFamily,
+  iconNames,
+  iconUnicodes,
+  theme,
+} from "../shared/constants";
 
 const Library = () => {
   return (
@@ -43,68 +50,41 @@ const Library = () => {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity
+      <View
         style={{
+          marginVertical: 10,
+          marginHorizontal: 16,
           flexDirection: "row",
           alignItems: "center",
-          marginVertical: 10,
-          marginLeft: 16,
+          justifyContent: "space-between",
         }}
       >
-        <View style={{ marginTop: 3 }}>
-          <Recent height={16} width={16} fill={theme.white} />
-        </View>
-        <Text style={[styles.tagText, { marginLeft: 12 }]}>
-          Recently played
-        </Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          style={{ flexDirection: "row", alignItems: "center" }}
+        >
+          <View style={{ marginTop: 3 }}>
+            <Recent height={16} width={16} fill={theme.white} />
+          </View>
+          <Text style={[styles.tagText, { marginLeft: 12 }]}>
+            Recently played
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <IconFont name={iconUnicodes.GRID_VIEW_SQUARE_BOLD} />
+        </TouchableOpacity>
+      </View>
 
-      <ScrollView contentContainerStyle={{ paddingHorizontal: 16 }}>
-        {React.Children.toArray(
-          libraries.map((library) => (
-            <TouchableOpacity
-              style={{
-                flexDirection: "row",
-                marginBottom: 16,
-                alignItems: "center",
-              }}
-            >
-              <Image
-                style={{
-                  height: 80,
-                  width: 80,
-                  resizeMode: "cover",
-                  marginRight: 16,
-                }}
-                source={{ uri: library.images[0].url }}
-              />
-              <View style={{ width: width * 0.7 }}>
-                <Text
-                  lineBreakMode="tail"
-                  style={{
-                    color: theme.white,
-                    fontSize: 16,
-                    marginBottom: 5,
-                    fontFamily: fontFamily.Book,
-                  }}
-                >
-                  {library.name}
-                </Text>
-                <Text
-                  style={{
-                    color: theme.gray,
-                    fontSize: 14,
-                    fontFamily: fontFamily.Book,
-                    textTransform: "capitalize",
-                  }}
-                >
-                  Playlist: {library.owner.displayName}
-                </Text>
-              </View>
-            </TouchableOpacity>
-          ))
-        )}
-      </ScrollView>
+      <FlatList
+        data={libraries}
+        keyExtractor={({ id }) => id}
+        renderItem={({ item }) => {
+          return <LibraryHorizontalCard library={item} />;
+        }}
+        ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
+        contentContainerStyle={{
+          paddingHorizontal: 16,
+        }}
+      />
     </SafeAreaView>
   );
 };

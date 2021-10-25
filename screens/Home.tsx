@@ -16,6 +16,7 @@ import { RootTabScreenProps } from "../types";
 import { Icon } from "../components/Icon";
 import { HomeHeader } from "../components/screens/Home/HomeHeader";
 import SongCard from "../components/screens/Home/SongCard";
+import Svg, { Path } from "react-native-svg";
 
 export const Home = ({ navigation }: RootTabScreenProps<"Home">) => {
   return (
@@ -49,6 +50,20 @@ export const Home = ({ navigation }: RootTabScreenProps<"Home">) => {
             }}
           />
         </View>
+        <View style={{ marginTop: 16 }}>
+          <Text style={styles.greeting}>Your top mixes</Text>
+          <FlatList
+            data={topMixes}
+            keyExtractor={({ id }) => id}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{ paddingHorizontal: 16 }}
+            ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
+            renderItem={({ item }) => {
+              return <SongCard item={item} />;
+            }}
+          />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -58,6 +73,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: theme.darkestGray,
+    padding: 0,
+    margin: 0,
   },
   title: {
     fontFamily: fontFamily.Book,

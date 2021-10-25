@@ -20,6 +20,7 @@ export default function useCachedResources() {
           'CircularStd-Medium': require('../assets/fonts/CircularStd-Medium.otf'),
           'CircularStd-Book': require('../assets/fonts/CircularStd-Book.otf'),
           'CircularStd-Light': require('../assets/fonts/CircularStd-Light.otf'),
+          'Spotify-Icon': require('../assets/icon-fonts/spoticon.ttf')
         });
       } catch (e) {
         // We might want to provide this error information to an error reporting service

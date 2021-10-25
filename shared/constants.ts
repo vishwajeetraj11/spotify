@@ -46,3 +46,9 @@ export const iconNames = {
     SETTINGS: 'settings', // X
     SPOTIFY: 'spotify'
 }
+
+// icon font unicodes for spoticon
+export const iconUnicodes = {
+    GRID_VIEW_SQUARE_BOLD: '\uF178',
+    GRID_VIEW_ROUND_SQUARE: '\uF1CA'
+}
