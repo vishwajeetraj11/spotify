@@ -1,3 +1,4 @@
+import { useNavigation, useNavigationState } from "@react-navigation/core";
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { width } from "../../../constants/Layout";
@@ -8,8 +9,13 @@ interface Library {
 }
 
 const LibraryHorizontalCard: React.FC<Library> = ({ library }) => {
+  const navigation = useNavigation();
+  const onPress = () => {
+    navigation.navigate("Playlist");
+  };
   return (
     <TouchableOpacity
+      onPress={onPress}
       style={{
         flexDirection: "row",
         marginBottom: 16,

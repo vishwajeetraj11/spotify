@@ -20,10 +20,20 @@ export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
   Modal: undefined;
   NotFound: undefined;
+  Library: NavigatorScreenParams<RootTabParamList> | undefined;
+  Playlist: NavigatorScreenParams<RootTabParamList> | undefined;
+};
+
+export type LibraryStackParamList = {
+  Library: NavigatorScreenParams<RootTabParamList> | undefined;
+  Playlist: NavigatorScreenParams<RootTabParamList> | undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
   NativeStackScreenProps<RootStackParamList, Screen>;
+export type LibraryStackScreenProps<
+  Screen extends keyof LibraryStackParamList
+> = NativeStackScreenProps<LibraryStackParamList, Screen>;
 
 export type RootTabParamList = {
   Home: undefined;

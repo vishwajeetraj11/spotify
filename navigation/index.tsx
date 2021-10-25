@@ -25,6 +25,7 @@ import NotFoundScreen from "../screens/NotFoundScreen";
 import { Home } from "../screens/Home";
 import TabTwoScreen from "../screens/TabTwoScreen";
 import {
+  LibraryStackParamList,
   RootStackParamList,
   RootTabParamList,
   RootTabScreenProps,
@@ -33,6 +34,7 @@ import LinkingConfiguration from "./LinkingConfiguration";
 import { fontFamily, theme } from "../shared/constants";
 import { Search } from "../screens/Search";
 import Library from "../screens/Library";
+import Playlist from "../screens/Playlist";
 
 export default function Navigation({
   colorScheme,
@@ -72,6 +74,25 @@ function RootNavigator() {
         <Stack.Screen name="Modal" component={ModalScreen} />
       </Stack.Group>
     </Stack.Navigator>
+  );
+}
+
+// Library Stack
+const LibraryStack = createNativeStackNavigator<LibraryStackParamList>();
+function LibraryStackNavigator() {
+  return (
+    <LibraryStack.Navigator initialRouteName="Library">
+      <LibraryStack.Screen
+        name="Library"
+        component={Library}
+        options={{ headerShown: false }}
+      />
+      <LibraryStack.Screen
+        name="Playlist"
+        component={Playlist}
+        options={{ headerShown: false }}
+      />
+    </LibraryStack.Navigator>
   );
 }
 
@@ -126,7 +147,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="YourLibrary"
-        component={Library}
+        component={LibraryStackNavigator}
         options={{
           title: "Your Library",
           header: () => null,
